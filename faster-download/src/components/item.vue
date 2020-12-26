@@ -1,25 +1,68 @@
 <template>
-  <div class="download-item ol-layout-h c-top ol-b-muted_1 ol-p-8">
+  <div class="download-item ol-layout-h c-top ol-line ol-p-8">
     <span class="ol-w-100 ol-h-80 ol-layout-h c-cent">
       <img class="ol-w-40 ol-h-40"
-        src="https://img.zcool.cn/community/0118725a38cf00a80121db809cb3d2.jpeg@260w_195h_1c_1e_1o_100sh.jpg"
+        :src="item.icon"
       />
     </span>
     <div class="c-flex ol-p-20__l" style="border-left: #eee 1px solid;">
-      <h4>52d3ce6b-963a-4942-a229-7a6085d4ce40.pptx</h4>
+      <h4>{{item.title}}</h4>
       <p class="ol-c_muted">
-        http://ppt.sotary.com/Data/PPT/2018/08_23/52d3ce6b-963a-4942-a229-7a6085d4ce4
+        {{item.url}}
       </p>
       <div>
-        <a-progress :percent="50" status="active" />
+        <a-progress :percent="item.progress" status="active" />
       </div>
-      <div><a href="">所在文件夹</a></div>
+      <div class='ol-m-10__t'>
+        <a-space>
+          <a href="javascript:void(0);"  v-if='item.state == 3' @click='open(item.savePath)'>所在文件夹</a> 
+          <a-button type='primary' v-if='item.state == 0' size='small' @click='pause'>暂停</a-button> 
+          <a-button type='primary' v-if='item.state == 1' size='small' @click='start'>开始</a-button> 
+          <a-button type='danger' v-if='item.state < 2' size='small' @click='cancel'>取消</a-button>
+          <a-button type='link' v-if='item.state == 2' size='small' @click='retry'>重新下载</a-button>
+        </a-space>
+      </div>
     </div>
+
+    <CloseOutlined />
   </div>
 </template>
 
 <script>
-export default {};
+import {CloseOutlined} from '@ant-design/icons-vue';
+export default {
+  components: {CloseOutlined},
+  props: {
+    item: {
+      type: Object,
+      default: () => ({})
+    }
+  },
+  data() {
+    return {
+     
+    }
+  },
+
+  mounted() {
+     
+  },
+
+  methods: {
+    pause(){
+
+    },
+    start() {
+
+    },
+    cancel() {
+
+    },
+    retry() {
+
+    }
+  }
+};
 </script>
 
 <style>

@@ -40,7 +40,7 @@
 
 "use strict";
 
-var QWebChannelMessageTypes = {
+export var QWebChannelMessageTypes = {
     signal: 1,
     propertyUpdate: 2,
     init: 3,
@@ -53,7 +53,7 @@ var QWebChannelMessageTypes = {
     response: 10,
 };
 
-var QWebChannel = function(transport, initCallback)
+export var QWebChannel = function(transport, initCallback)
 {
     if (typeof transport !== "object" || typeof transport.send !== "function") {
         console.error("The QWebChannel expects a transport object with a send function and onmessage callback property." +
@@ -441,8 +441,9 @@ function QObject(name, data, webChannel)
 }
 
 //required for use with nodejs
-if (typeof module === 'object') {
-    module.exports = {
-        QWebChannel: QWebChannel
-    };
-}
+
+// export {
+//         QWebChannel: QWebChannel,
+//         QWebChannelMessageTypes:QWebChannelMessageTypes
+//     };
+
