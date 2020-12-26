@@ -1,0 +1,19 @@
+{
+  "name": "faster-download",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^5.1.8",
+    "@oneline/style": "0.0.22",
+    "@oneline/svg": "0.0.6",
+    "ant-design-vue": "^2.0.0-rc.5",
+    "vue": "^3.0.4"
+  },
+  "devDependencies": {
+    "vite": "^1.0.0-rc.13",
+    "@vue/compiler-sfc": "^3.0.4"
+  }
+}
