@@ -1,6 +1,6 @@
 <template>
    <div class="ol-layout-h c-space-b ol-p-8 download-bg">
-     <h3>下载</h3>
+     <h3 class='ol-c_white'>下载</h3>
      <div class="ol-flex"> <a-input-search placeholder="input search text" enter-button  /></div>
      <div><MoreOutlined /></div>
    </div>
