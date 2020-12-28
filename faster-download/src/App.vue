@@ -8,7 +8,7 @@
 <script>
 import DownloadHeader from './components/header.vue'
 import DownloadItem from './components/item.vue'
-import {QWebChannel, QWebChannelMessageTypes} from './lib/qwebchannel';
+
 
 
 function mockList() {
@@ -35,10 +35,6 @@ export default {
     }
   },
 
-  mounted() {
-    const channel = new QWebChannel(qt.webChannelTransport, function(channel) {
-      
-    })
-  }
+   
 }
 </script>
