@@ -13,6 +13,8 @@ try{
     hasQt = false;
 }
 
+
+
 const create = function(channel) {
     const app = createApp(App);
     if(channel) {

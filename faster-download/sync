@@ -1,0 +1,3 @@
+cp dist/_assets/index.*.js /home/wutongwei/workspace/qtspace/faster/ui/download/index.js
+cp dist/_assets/style.*.css /home/wutongwei/workspace/qtspace/faster/ui/download/style.css
+cp dist/index.html /home/wutongwei/workspace/qtspace/faster/ui/download/index.html
