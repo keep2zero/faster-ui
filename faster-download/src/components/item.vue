@@ -10,12 +10,12 @@
       <p class="ol-c_muted">
         {{item.url}}
       </p>
-      <div>
-        <a-progress :percent="item.progress" status="active" />
+      <div v-if="item.state == 0">
+        <span v-if="item.speed > -1">{{item.speed}}kb/s</span><a-progress :percent="item.progress" status="active" :showInfo="false" />
       </div>
       <div class='ol-m-10__t'>
-        <a-space>
-          <a href="javascript:void(0);"  v-if='item.state == 3' @click='open(item.savePath)'>所在文件夹</a> 
+        <a-space> 
+          <a href="javascript:void(0);"  v-if='item.state == 3' @click='open(item.did)'>所在文件夹</a> 
           <a-button type='primary' v-if='item.state == 0' size='small' @click='pause'>暂停</a-button> 
           <a-button type='primary' v-if='item.state == 1' size='small' @click='start'>开始</a-button> 
           <a-button type='danger' v-if='item.state < 2' size='small' @click='cancel'>取消</a-button>
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <CloseOutlined />
+    <CloseOutlined @click="del"/>
   </div>
 </template>
 
@@ -49,6 +49,12 @@ export default {
   },
 
   methods: {
+    del() {
+      this.$emit("delItem", this.item.did);
+    },
+    open(did) {
+      this.$emit("open", did);
+    },
     pause(){
 
     },
