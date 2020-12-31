@@ -96,8 +96,15 @@ export default {
 
     this.$channel.noticeDownloadDelItem.connect((did) => {
        const result = this.findItem(did);
+       console.log("删除：", did, result);
        if(result[0] == -1) {console.log("没有找到：" + did);return;}
-       this.list.splice(result[0]);
+       this.list.splice(result[0],1);
+    })
+
+    this.$channel.noticeDownloadItemState.connect((did, state) => {
+       const result = this.findItem(did);
+       if(result[0] == -1) {console.log("没有找到：" + did);return;}
+       result[1].state = state;
     })
 
   }

@@ -1,4 +1,5 @@
 echo "同步开始"
-cp dist/_assets/index.*.js /home/wutongwei/workspace/qtspace/faster/ui/download/index.js
-cp dist/_assets/style.*.css /home/wutongwei/workspace/qtspace/faster/ui/download/style.css
+mv dist/assets/index.js /home/wutongwei/workspace/qtspace/faster/ui/download/index.js
+mv dist/assets/style.css /home/wutongwei/workspace/qtspace/faster/ui/download/style.css
 cp dist/index.html /home/wutongwei/workspace/qtspace/faster/ui/download/index.html
+cp -R dist/assets /home/wutongwei/workspace/qtspace/faster/ui/download/

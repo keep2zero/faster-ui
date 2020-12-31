@@ -4,6 +4,8 @@ import {QWebChannel, QWebChannelMessageTypes} from './lib/qwebchannel';
 import 'ant-design-vue/dist/antd.css';
 import App from './App.vue'
 import "@oneline/style/dist/index.css"
+import "file-icon-vectors/dist/file-icon-vectors.css";
+import "file-icon-vectors/dist/file-icon-vivid.css";
 import './index.css'
 
 let hasQt = true;
